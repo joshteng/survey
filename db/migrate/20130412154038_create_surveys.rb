@@ -4,6 +4,7 @@ class CreateSurveys < ActiveRecord::Migration
       s.string :title
       s.text :description
       s.references :user
+      s.timestamps
     end
   end
 end

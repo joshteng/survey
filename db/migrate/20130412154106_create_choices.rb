@@ -3,6 +3,7 @@ class CreateChoices < ActiveRecord::Migration
     create_table :choices do |c|
       c.string :choice
       c.references :question
+      c.timestamps
     end
   end
 end
