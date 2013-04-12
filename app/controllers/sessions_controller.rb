@@ -1,10 +1,14 @@
 namespace '/sessions' do
-  post '/login' do
+  get '/login/?' do
+    erb :"sessions/login"
+  end
+
+  post '/login/?' do
     user = authenticate(params)
     login(user)
   end
 
-  delete '/logout' do
+  delete '/logout/?' do
     session[:current_user_id] = nil
     session[:messages] = "Successfully logged out!"
     redirect '/'
