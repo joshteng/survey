@@ -1,11 +1,10 @@
-require 'bcrypt'
-
 class User < ActiveRecord::Base
   include BCrypt
 
   attr_accessor :password_confirmation
 
-  validates :name, :email,  :uniqueness => true, :presence => true
+  validates :name, :presence => true
+  validates :email, :uniqueness => true, :presence => true
                             
 
   validates :password, :presence => true

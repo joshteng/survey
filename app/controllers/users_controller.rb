@@ -1,10 +1,10 @@
 namespace '/users' do
 
-  get '/new' do
+  get '/new/?' do
     erb :"users/new"
   end
 
-  post '/' do
+  post '/?' do
     @user = User.new(params[:user])
 
     if @user.save
@@ -16,7 +16,7 @@ namespace '/users' do
     end
   end
 
-  get '/:id' do
+  get '/:id/?' do
     user_id = params[:id]
 
     @user = User.find_by_id(user_id)
@@ -28,7 +28,7 @@ namespace '/users' do
     end
   end
 
-  get '/:id/edit' do
+  get '/:id/edit/?' do
     user_id = params[:id]
 
     @user = User.find_by_id(user_id)
@@ -40,7 +40,7 @@ namespace '/users' do
     end
   end
 
-  put '/' do
+  put '/?' do
     user_id = params[:user_id]
 
     @user = User.find_by_id(user_id)
@@ -53,7 +53,7 @@ namespace '/users' do
     end
   end
 
-  delete '/:id' do
+  delete '/:id/?' do
     User.delete(params[:id])
     session[:messages] = "User deleted"
     redirect '/'
