@@ -1,0 +1,39 @@
+<form class="form-horizontal" action='/users' method="post">
+  <% if @user %>
+    <input type = "hidden" name="user_id" value="<%= @user.id %>">
+    <input name="_method" value="PUT" type="hidden">
+  <% end %>
+
+  <div class="control-group">
+    <label class="control-label">Name</label>
+    <div class="controls">
+      <input class="input-xxlarge" type="text" name="user[name]" value=<%= @user ? @user.name : "" %>>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label">Email</label>
+    <div class="controls">
+      <input class="input-xxlarge" type="text" name="user[email]" value=<%= @user ? @user.email : "" %>>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Password</label>
+    <div class="controls">
+      <input class="input-xxlarge" type="password" name="user[password]">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Confirm Password</label>
+    <div class="controls">
+      <input class="input-xxlarge" type="password" name="user[password_confirmation]">
+    </div>
+  </div>
+
+
+  <div class="form-actions">
+    <button class="btn btn-primary" type="submit"><%= @user ? "Update user" : "Create user" %></button>
+  </div>
+</form>
