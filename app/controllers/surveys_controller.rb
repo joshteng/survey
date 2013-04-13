@@ -57,4 +57,8 @@ namespace '/surveys' do
     end
     redirect "/users/#{current_user.id}"
   end
+
+  post '/:id/?' do
+    params.inspect
+  end
 end
