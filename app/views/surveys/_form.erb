@@ -3,7 +3,22 @@
     <input name="_method" value="put" type="hidden">
     <input name="survey_id" value=<%= @survey.id %> type="hidden">
   <% end %>
+  <div class="survey_info">
+    <input type="text" name="survey_title" placeholder="Title">
+    <input type="text" name="survey_description" placeholder="Description">
+  </div>
 
-  <input name=survey
+
+  <div class="survey">
+    <div class="question">
+      <input type="text" name="questions[]question" placeholder="Question">
+    </div>
+    <div class="choice">
+      <input type="text" name="questions[]choices[]" placeholder="Choice">
+      <button name="add_choice">Add Choice</button>
+    </div>
+    <button name="add_question">Add Question</button>
+  </div>
+  <button name="submit_survey" id="submit_survey">Create Survey</button>
 
 </form>

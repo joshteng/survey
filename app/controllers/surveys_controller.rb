@@ -9,8 +9,15 @@ namespace '/surveys' do
     erb :"surveys/new"
   end
 
-  post '/' do
-    @survey = current_user.surveys.build(params[:survey])
+  post '/?' do
+    @survey = User.first.surveys.build(:title => params[:survey_title],
+                                       :description => params[:survey_description])
+    params[:questions].each_with_index do |q, i|
+      q = @survey.questions.build(:question => q["question"])
+      params[:questions][i]["choices"].each do |c|
+        q.choices.build(:choice => c)
+      end
+    end
     if @survey.save
       session[:messages] = "Survey created!"
       redirect "/surveys/#{@survey.id}"
