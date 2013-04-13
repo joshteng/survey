@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :choices
-  has_and_belongs_to_many :surveys
+  has_many :responses
+  has_many :surveys_taken, :through => :survey_takens, :source => :survey
+  has_many :survey_takens
+  has_many :surveys_created, :foreign_key => "user_id", :class_name => "Survey"
+  has_many :surveys
 
   include BCrypt
 
