@@ -7,3 +7,13 @@
 th {
   text-align: left;
 }
+
+.content {
+  width: 600px;
+  overflow: hidden;
+}
+
+.content .left-column, .content .right-column{
+  float: left;
+  width: 50%;
+}
