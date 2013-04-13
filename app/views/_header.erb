@@ -1,0 +1,23 @@
+  <div class="header">
+    <h1>Survey Gurrrilla</h1>
+  </div>
+
+  <div class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Create a Survey</a></li>
+      <li><a href="#">Take a Survey</a></li>
+      
+      <% if login? %>
+      <li>
+        <form type="hidden" method="POST" action="/sessions/logout">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="user_id" value= <%= current_user.id %> >
+        <button type="submit">Logout</button>
+        </form>
+      </li>
+      <% end %>
+
+      
+    </ul>
+  </div>

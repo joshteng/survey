@@ -9,6 +9,7 @@ namespace '/users' do
 
     if @user.save
       #remember to login user here #work on this when working on session
+      login(@user)
       redirect "/users/#{@user.id}"
     else
       session[:errors] = "We love you but we failed to create an account for you. Please try again!"

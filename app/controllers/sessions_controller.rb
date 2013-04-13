@@ -1,4 +1,10 @@
+
 namespace '/sessions' do
+
+before '/login' do
+  redirect '/' if login?
+end
+
   get '/login/?' do
     erb :"sessions/login"
   end
@@ -13,4 +19,5 @@ namespace '/sessions' do
     session[:messages] = "Successfully logged out!"
     redirect '/'
   end
+  
 end
