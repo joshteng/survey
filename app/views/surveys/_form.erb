@@ -1,0 +1,9 @@
+<form action="/surveys" method="post">
+  <% if @survey %>
+    <input name="_method" value="put" type="hidden">
+    <input name="survey_id" value=<%= @survey.id %> type="hidden">
+  <% end %>
+
+  <input name=survey
+
+</form>
