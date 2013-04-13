@@ -59,6 +59,6 @@ namespace '/surveys' do
   end
 
   post '/:id/?' do
-    params.inspect
+    
   end
 end
