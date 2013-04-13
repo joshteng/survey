@@ -1,0 +1,16 @@
+<h2><%= @survey.title %></h2>
+<h3><%= @survey.description %></h3>
+<hr>
+<div class="survey-container">
+  <% @questions.each do |question| %>
+  <ol><%= question.question %><br>
+    <form class="choices">
+      <% question.choices.each do |choice| %>
+      <input type="radio" name="response" value="<%= choice.choice %>"><%= choice.choice %><br>
+      <% end %>
+  </ol>
+      <% end %>
+    </form>
+
+</div>
+

@@ -1,5 +1,6 @@
 namespace '/surveys' do
   
+  
   before '/new' do
     authenticate!
   end
@@ -19,8 +20,9 @@ namespace '/surveys' do
     end
   end
 
-  get '/:id' do
-    @survey = Survey.find_by_id(params[:id])
+  get '/:id/?' do
+    @survey = Survey.find(params[:id])
+    @questions = Question.where(survey_id: @survey.id)
     if @survey
       erb :"surveys/show"
     else

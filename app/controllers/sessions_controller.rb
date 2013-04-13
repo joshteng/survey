@@ -1,9 +1,9 @@
 
 namespace '/sessions' do
 
-before '/login' do
-  redirect '/' if login?
-end
+  before '/login' do
+    redirect '/' if login?
+  end
 
   get '/login/?' do
     erb :"sessions/login"
