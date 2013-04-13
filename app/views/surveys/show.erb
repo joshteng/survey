@@ -2,14 +2,16 @@
 <h3><%= @survey.description %></h3>
 <hr>
 <div class="survey-container">
+  <form class="choices" action="/surveys/<%= session[:current_user_id] %>" method="post">
+
+
   <% @questions.each_with_index do |question, index| %>
-  <ol>
-    <form class="choices" action="/surveys/<%= session[:current_user_id] %>" method="post">
-      <label class="question_id: <%= question.id %>"><%= question.question %></label><br>
+
+      <label><%= question.question %></label><br>
       <% question.choices.each do |choice| %>
-      <input type="radio" name="response_for_question_id: <%= index+1 %>" value="<%= choice.choice %>"><%= choice.choice %><br>
+      <input type="checkbox" name="choice_id[]" value="<%= choice.id %>"><%= choice.choice %><br>
       <% end %>
-    </ol>
+
     <% end %>
     <input type="submit">
   </form>

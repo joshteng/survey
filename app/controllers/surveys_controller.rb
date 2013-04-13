@@ -59,6 +59,12 @@ namespace '/surveys' do
   end
 
   post '/:id/?' do
-    
+    @choice_ids = params[:choice_id]
+
+    @choice_ids.each do |choice_id|
+      Response.create(user_id: session[:current_user_id], choice_id: choice_id)
+    end
+
+    redirect '/' 
   end
 end
