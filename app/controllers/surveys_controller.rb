@@ -1,5 +1,8 @@
 namespace '/surveys' do
-  
+
+  before do
+    @all_surveys = Survey.all
+  end
   
   before '/new' do
     authenticate!
@@ -9,8 +12,12 @@ namespace '/surveys' do
     erb :"surveys/new"
   end
 
+  get '/all' do
+    erb :"surveys/all"
+  end
+
   post '/?' do
-    @survey = User.first.surveys.build(:title => params[:survey_title],
+    @survey = current_user.surveys.build(:title => params[:survey_title],
                                        :description => params[:survey_description])
     params[:questions].each_with_index do |q, i|
       q = @survey.questions.build(:question => q["question"])

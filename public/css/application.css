@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 900px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
@@ -9,11 +9,15 @@ th {
 }
 
 .content {
-  width: 600px;
+  width: 900px;
   overflow: hidden;
 }
 
 .content .left-column, .content .right-column{
   float: left;
   width: 50%;
+}
+
+* {
+  outline: 1px solid red;
 }

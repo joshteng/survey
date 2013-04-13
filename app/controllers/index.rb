@@ -7,6 +7,10 @@ before do
   session[:messages] = nil if @errors
 end
 
+#get all the surveys
+before do
+  @all_surveys = Survey.all
+end
 
 get '/' do
  
