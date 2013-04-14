@@ -8,7 +8,7 @@
       <li><a href="/surveys/all">Take a Survey</a></li>
       
       <% if login? %>
-      <li><a href="/users/<%= @user.id %>"</a></li>
+      <li><a href="/users/<%= @user.id %>">My Surveys</a></li>
       <li>
         <form type="hidden" method="POST" action="/sessions/logout">
         <input type="hidden" name="_method" value="delete">
@@ -16,6 +16,8 @@
         <button type="submit">Logout</button>
         </form>
       </li>
+      <% else %>
+      <li><a href="/sessions/login">Login</a></li>
       <% end %>
 
       
