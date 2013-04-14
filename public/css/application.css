@@ -8,16 +8,125 @@ th {
   text-align: left;
 }
 
+* {
+  font-family: "Arial Black", sans-serif;
+}
+
+/*NAV BAR*/
+
+.header {
+  background-color: #34495E;
+  color: #D7DCE0;
+  padding-bottom: 5px;
+}
+
+.header h1 {
+  display: inline;
+  padding-left: 10px;
+}
+
+.nav { 
+  display: inline;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.nav ul {
+  list-style: none;
+  padding-left: 0px;
+  display: inline-block;
+  margin-bottom: 0px;
+  position: relative;
+  bottom: 5px;
+}
+
+.nav ul li {
+  display: inline-block;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding-left: 15px;
+}
+
+.nav ul li a:hover {
+  color: #2FE2BF;
+}
+
+/*HOMEPAGE COLUMNS*/
+
+.content-container {
+  width: 900px;
+  margin: 20px auto;
+}
+
 .content {
   width: 900px;
   overflow: hidden;
+  color: #34495E;
 }
 
-.content .left-column, .content .right-column{
+.content .left-column {
   float: left;
-  width: 50%;
+  width: 433px;
+  border: 2px solid #F4D03F;
+  border-radius: 10px;
+  padding: 0px 0px 10px 10px;
 }
 
-* {
-  outline: 1px solid red;
+.content .right-column {
+  float: right;
+  width: 433px;
+  border: 2px solid #F4D03F;
+  border-radius: 10px;
+  padding-left: 10px;
 }
+
+.content .right-column ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.content .right-column ul li a {
+  text-decoration: none;
+  color: #2FE2BF;
+}
+
+.content .right-column ul li a:hover {
+  color: #F4D03F;
+}
+
+.footer {
+  float: right;
+  padding: 5px 5px;
+}
+
+#new_survey input {
+  width: 390px;
+  border-radius: 7px;
+  border: 2px solid #E74C3C;
+  color: #C0392B;
+  margin: 3px 0px;
+}
+
+#new_survey input:focus {
+  outline: none;
+}
+
+#new_survey button {
+  background-color: #E74C3C;
+  color: white;
+  border: none;
+  border-radius: 3px
+}
+
+#new_survey .question {
+  padding: 5px 0px;
+}
+
+#new_survey .question button[name="add_question"] {
+  margin: 5px 10px;
+  float: right;
+}
+

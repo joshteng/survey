@@ -1,10 +1,11 @@
-<form action="/surveys" method="post">
+<form id="new_survey" action="/surveys" method="post">
   <% if @survey %>
     <input name="_method" value="put" type="hidden">
     <input name="survey_id" value=<%= @survey.id %> type="hidden">
   <% end %>
   <div class="survey_info">
     <input type="text" name="survey_title" placeholder="Title">
+    <br>
     <input type="text" name="survey_description" placeholder="Description">
   </div>
 
@@ -13,9 +14,9 @@
     <input type="text" name="questions[]question" placeholder="Question">
     <div class="choice">
       <input type="text" name="questions[]choices[]" placeholder="Choice">
-      <button name="add_choice">Add Choice</button>
+      <button name="add_choice">+</button>
     </div>
-    <button name="add_question">Add Question</button>
+    <button name="add_question">+ Question</button>
   </div>
   <button name="submit_survey" id="submit_survey">Create Survey</button>
 
