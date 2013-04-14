@@ -17,7 +17,7 @@ namespace '/surveys' do
   end
 
   post '/?' do
-    @survey = current_user.surveys.build(:title => params[:survey_title],
+    @survey = User.first.surveys.build(:title => params[:survey_title],
                                        :description => params[:survey_description])
     params[:questions].each_with_index do |q, i|
       q = @survey.questions.build(:question => q["question"])
